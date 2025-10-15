@@ -33,16 +33,4 @@ public class PipeSpawner : MonoBehaviour
         Vector2 spawnPosiotn = new Vector2(transform.position.x, pipePosY);
         Instantiate(pipePrefab, spawnPosiotn, Quaternion.identity);
     }
-
-    private void OnTriggerSelect2D(Collision col)
-    {
-        Debug.DrawRay(transform.position, transform.forward * 1f, Color.red);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
-        {
-            Debug.Log(hit.collider.gameObject.name);
-        }
-    }
 }
