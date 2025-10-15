@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Pipe : MonoBehaviour
 {
@@ -20,7 +18,7 @@ public class Pipe : MonoBehaviour
         {
             Destroy(gameObject);       //스스로 삭제
         }
-        StartCoroutine(CharacterCheck());
+       // StartCoroutine(CharacterCheck());
     }
     private IEnumerator CharacterCheck()
     {
