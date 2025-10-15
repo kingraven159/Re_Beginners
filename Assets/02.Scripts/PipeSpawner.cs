@@ -9,9 +9,6 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private float heighOffset = 1.5f; //파이프 높이 프리셋
 
     private float timer = 0f;
-
-    public bool isTrough = false;
-
     void Start()
     {
         SpawnPipe();
