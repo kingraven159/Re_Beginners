@@ -36,4 +36,8 @@ public class MapScroll : MonoBehaviour
         offset.x += scrollSpeed * Time.deltaTime;
         rend.material.mainTextureOffset = offset;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cea44f4f39674fb254a3e94e9d0c20c7ae8befcf
