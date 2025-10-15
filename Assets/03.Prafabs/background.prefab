@@ -99,6 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0.2
   speedStep: 0.1
-  stepInterval: 5
+  stepInterval: 10
   mapWidth: 1280
   mapHeight: 720
