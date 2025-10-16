@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI finalScoreText;  // 게임 오버 시 최종 시간 표시
     public GameObject startButton;          // 시작 버튼
     public GameObject gameOverPanel;        // 게임 오버 화면
+    public Player player;
+    public Pipe pipe;
 
     float timePassed = 0f;                  // 경과 시간 저장
     bool gameStarted = false;               // 게임 실행 여부
@@ -16,7 +18,7 @@ public class UIManager : MonoBehaviour
     {
         gameOverPanel.SetActive(false);     // 게임 오버 화면 숨기기
         startButton.SetActive(true);        // 시작 버튼 보이기
-        scoreText.text = "Score : 0";       // 초기 시간 표시
+        scoreText.text = "Score : "+ pipe.score;       // 초기 시간 표시
     }
 
     void Update()

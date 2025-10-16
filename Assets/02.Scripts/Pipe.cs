@@ -33,6 +33,7 @@ public class Pipe : MonoBehaviour
         {
             Debug.Log(hit.collider.gameObject.name);
             score++;
+            Debug.Log(score);
             yield return new WaitForSeconds(troughDelay);
         }
     }

@@ -914,6 +914,8 @@ MonoBehaviour:
   finalScoreText: {fileID: 58481873}
   startButton: {fileID: 160246911}
   gameOverPanel: {fileID: 158048719}
+  player: {fileID: 0}
+  pipe: {fileID: 0}
 --- !u!1 &1752601509
 GameObject:
   m_ObjectHideFlags: 0
