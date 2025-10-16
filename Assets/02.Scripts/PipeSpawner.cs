@@ -8,6 +8,7 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private float spawnRate = 3.0f;   //파이프 생성 딜레이
     [SerializeField] private float heighOffset = 1.5f; //파이프 높이 프리셋
 
+<<<<<<< HEAD
     private float spawnTimer = 0f;
     void Start()
     {
@@ -21,13 +22,30 @@ public class PipeSpawner : MonoBehaviour
         {
             SpawnPipe();
             spawnTimer = 0f;
+=======
+    private float timer = 0f;
+    public UIManager uiManager;
+
+    void Update()
+    {
+        if (uiManager != null && uiManager.gameStarted)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= spawnRate)
+            {
+                SpawnPipe();
+                timer = 0f;
+            }
+>>>>>>> UI2
         }
     }
 
     void SpawnPipe()
     {
         float pipePosY = Random.Range(-heighOffset, heighOffset);
-        Vector2 spawnPosiotn = new Vector2(transform.position.x, pipePosY);
-        Instantiate(pipePrefab, spawnPosiotn, Quaternion.identity);
+        Vector2 spawnPosition = new Vector2(transform.position.x, pipePosY);
+        Instantiate(pipePrefab, spawnPosition, Quaternion.identity);
     }
 }
+

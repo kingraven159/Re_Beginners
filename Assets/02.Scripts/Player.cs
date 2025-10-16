@@ -16,16 +16,38 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
+<<<<<<< HEAD
+=======
+    // UIManager 참조
+    private UIManager uiManager;
+
+
+>>>>>>> UI2
     private void Awake()
     {   // 초기화
         rigid = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
+        // UIManager 자동 연결
+        uiManager = FindObjectOfType<UIManager>();
+        // 게임 시작 전에는 중력 꺼두기
+        rigid.gravityScale = 0f;
+
     }
 
     void Update()
     {
-        Wing();
-        Tilt();
+        // 게임이 시작된 경우에만 동작
+        if (uiManager != null && uiManager.gameStarted)
+        {
+            // 게임 시작 시 중력 켜기 (한 번만)
+            if (rigid.gravityScale == 0f)
+            {
+                rigid.gravityScale = 3f; // 원하는 중력 값으로 설정
+            }
+
+            Wing();
+            Tilt();
+        }
     }
 
 

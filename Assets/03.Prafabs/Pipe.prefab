@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7165436871196536110}
   - component: {fileID: 4266879795509323424}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 5259971144811209039}
+>>>>>>> UI2
   - component: {fileID: 7223524521938212230}
   m_Layer: 6
   m_Name: Pipe 1
@@ -93,6 +97,23 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655706700209263771}
   m_Enabled: 1
+<<<<<<< HEAD
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b770061810048c4cbc0f5f8f8402cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  score: 0
+--- !u!61 &7223524521938212230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655706700209263771}
+  m_Enabled: 1
+>>>>>>> UI2
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -140,6 +161,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6673375907259373122}
   - component: {fileID: 6543020845398649155}
+<<<<<<< HEAD
+=======
+  - component: {fileID: 7463183778885582572}
+>>>>>>> UI2
   - component: {fileID: 6771633828112648514}
   m_Layer: 6
   m_Name: Pipe 2
@@ -223,6 +248,23 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4356772764129760886}
   m_Enabled: 1
+<<<<<<< HEAD
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b770061810048c4cbc0f5f8f8402cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  score: 0
+--- !u!61 &6771633828112648514
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356772764129760886}
+  m_Enabled: 1
+>>>>>>> UI2
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -269,7 +311,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2694127296400673597}
+<<<<<<< HEAD
   - component: {fileID: 7148304416488642526}
+=======
+>>>>>>> UI2
   m_Layer: 6
   m_Name: Pipe
   m_TagString: Untagged

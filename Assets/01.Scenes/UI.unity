@@ -289,7 +289,10 @@ RectTransform:
   m_Children:
   - {fileID: 58481872}
   - {fileID: 1458928289}
+<<<<<<< HEAD
   - {fileID: 1299959864}
+=======
+>>>>>>> UI2
   m_Father: {fileID: 1113131171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -310,15 +313,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
+<<<<<<< HEAD
   m_Color: {r: 0, g: 0, b: 0, a: 0.56078434}
+=======
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> UI2
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_Sprite: {fileID: 21300000, guid: 2a173075f2c46b04b8c62ce956b235d9, type: 3}
   m_Type: 0
+=======
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+>>>>>>> UI2
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -733,6 +745,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+<<<<<<< HEAD
 --- !u!1 &1299959863
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +821,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299959863}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> UI2
 --- !u!1 &1458928288
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1005,11 @@ MonoBehaviour:
   finalScoreText: {fileID: 58481873}
   startButton: {fileID: 160246911}
   gameOverPanel: {fileID: 158048719}
+<<<<<<< HEAD
+=======
+  player: {fileID: 0}
+  pipe: {fileID: 0}
+>>>>>>> UI2
 --- !u!1 &1752601509
 GameObject:
   m_ObjectHideFlags: 0

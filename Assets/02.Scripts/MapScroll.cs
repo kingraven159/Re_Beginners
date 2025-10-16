@@ -17,16 +17,23 @@ public class MapScroll : MonoBehaviour
     private Renderer rend;
     private Vector2 offset;
     private float timer;
+    private UIManager uiManager;
+
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         offset = Vector2.zero;
+
+        // UIManager 자동 연결
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
+        if (uiManager != null && uiManager.gameStarted)
+        {
+            timer += Time.deltaTime;
         if (timer >= stepInterval)
         {
             scrollSpeed += speedStep;
@@ -35,6 +42,8 @@ public class MapScroll : MonoBehaviour
 
         offset.x += scrollSpeed * Time.deltaTime;
         rend.material.mainTextureOffset = offset;
+        }
+
     }
 }
 
