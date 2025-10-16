@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
         {
             timePassed += Time.deltaTime;
             int seconds = Mathf.FloorToInt(timePassed);
-            scoreText.text = "Score : " + seconds.ToString();
+            scoreText.text = "Time Score : " + seconds.ToString();
         }
     }
 
@@ -60,7 +60,7 @@ public class UIManager : MonoBehaviour
         gameOverPanel.SetActive(false);   // 게임 오버 UI 숨기기
         timePassed = 0f;                  // 시간 초기화
         gameStarted = true;               // 게임 시작 상태로 변경
-        scoreText.text = "Score : 0";     // 점수 텍스트 초기화
+        scoreText.text = "Time Score : 0";     // 점수 텍스트 초기화
     }
 
     // 게임 오버 시 호출되는 함수
@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
     {
         gameStarted = false;              // 게임 상태 종료
         gameOverPanel.SetActive(true);    // 게임 오버 UI 보이기
-        finalScoreText.text = "Time " + scoreText.text; // 최종 점수 표시
+        finalScoreText.text = scoreText.text; // 최종 점수 표시
     }
 
     // R 키로 게임 재시작

@@ -16,8 +16,9 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
-<<<<<<< HEAD
-    // UIManager 참조 (게임 상태 확인용)
+    private AudioSource wingsound;
+
+    // UIManager 참조
     private UIManager uiManager;
 
     // 중력 적용 여부 플래그
@@ -26,18 +27,7 @@ public class Player : MonoBehaviour
     // 초기 설정
     private void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>(); // Rigidbody2D 컴포넌트 가져오기
-        anima = GetComponent<Animator>();    // Animator 컴포넌트 가져오기
-        uiManager = FindObjectOfType<UIManager>(); // UIManager 자동 연결
-        rigid.gravityScale = 0f; // 게임 시작 전엔 중력 꺼두기
-=======
-    private AudioSource wingsound;
-
-    // UIManager 참조
-    private UIManager uiManager;
-
-    private void Awake()
-    {   // 초기화
+        // 초기화
         rigid = GetComponent<Rigidbody2D>();
         anima = GetComponent<Animator>();
         // UIManager 자동 연결
@@ -45,8 +35,6 @@ public class Player : MonoBehaviour
         // 게임 시작 전에는 중력 꺼두기
         rigid.gravityScale = 0f;
         wingsound = GetComponent<AudioSource>();
-
->>>>>>> origin/fix/sound
     }
 
     // 게임 재시작 시 플레이어 상태 초기화
@@ -84,15 +72,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-<<<<<<< HEAD
             anima.SetBool(wingHash, true); // 날갯짓 애니메이션 시작
             rigid.velocity = Vector2.up * wingForce; // 위로 힘 적용
-=======
+
             anima.SetBool(wingHash, true);
             rigid.velocity = Vector2.up * wingForce;
-
-            
->>>>>>> origin/fix/sound
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
@@ -132,7 +116,7 @@ public class Player : MonoBehaviour
     // 파이프와 충돌 시 게임 오버 처리
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Pipe"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Pipe"))
         {
             Death();              // 플레이어 사망
             uiManager.GameOver(); // UIManager에 게임 오버 알림
