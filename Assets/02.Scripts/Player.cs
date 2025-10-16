@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
+    private AudioSource wingsound;
+
     // UIManager 참조
     private UIManager uiManager;
 
@@ -27,6 +29,7 @@ public class Player : MonoBehaviour
         uiManager = FindObjectOfType<UIManager>();
         // 게임 시작 전에는 중력 꺼두기
         rigid.gravityScale = 0f;
+        wingsound = GetComponent<AudioSource>();
 
     }
 
@@ -51,15 +54,19 @@ public class Player : MonoBehaviour
     {   //Space를 누르면 날아 오르도록 애니메이션적용
         if (Input.GetKey(KeyCode.Space))
         {
-            //오디오 실행
-            GetComponent<AudioSource>().Play();
-
             anima.SetBool(wingHash, true);
             rigid.velocity = Vector2.up * wingForce;
+
+            
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             anima.SetBool(wingHash, false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //오디오 실행
+            wingsound.Play();
         }
     }
     private void Tilt()
