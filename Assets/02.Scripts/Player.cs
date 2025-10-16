@@ -63,11 +63,11 @@ public class Player : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Pipe"))
         {
             Death();
-        }
+        }       
     }
 }
