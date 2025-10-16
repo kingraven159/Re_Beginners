@@ -10,51 +10,28 @@ public class Pipe : MonoBehaviour
     [SerializeField] private float addSpeed = 0.5f;
     [SerializeField] private float MaxSpeed = 10.0f;
 
-    private float addSpeedTimer = 30f;
+    private float addSpeedTimer = 30f; //스피드 업 딜레이
 
     void Update()
     {
-<<<<<<< HEAD
-        PipeMove();
-      
-=======
         if (FindObjectOfType<UIManager>().gameStarted)
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-            StartCoroutine(CharacterCheck());
+            PipeMove();
         }
 
-
->>>>>>> UI2
         //화면 밖으로 이동하면
         if (transform.position.x < -10)
         {
             Destroy(gameObject);       //스스로 삭제
-<<<<<<< HEAD
-
         }
-        if(speed <=MaxSpeed)
+        // 스피드가 맥스가 보다 작거나 같으면
+        if(speed <= MaxSpeed)
         {
-            Invoke("AddSpeed()", addSpeedTimer);
-=======
-            StopCoroutine(CharacterCheck()); // 코루틴 정지
+            Invoke("AddSpeed()", addSpeedTimer); //딜레이 후 스피드를 추가
+
         }
     }
-    private IEnumerator CharacterCheck()
-    {
-        Debug.DrawRay(transform.position, transform.up * 10f, Color.red);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.up, 1);
-
-        if (hit.collider.CompareTag("Player"))
-        {
-            Debug.Log(hit.collider.gameObject.name);
-            score++;
-
-            yield return new WaitForSeconds(troughDelay);
->>>>>>> UI2
-        }
-    }
     private void PipeMove()
     {
             transform.position += Vector3.left * speed * Time.deltaTime;

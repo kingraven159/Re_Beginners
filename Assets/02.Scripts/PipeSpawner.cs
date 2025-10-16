@@ -8,24 +8,15 @@ public class PipeSpawner : MonoBehaviour
     [SerializeField] private float spawnRate = 3.0f;   //파이프 생성 딜레이
     [SerializeField] private float heighOffset = 1.5f; //파이프 높이 프리셋
 
-<<<<<<< HEAD
-    private float spawnTimer = 0f;
+
+    private float timer = 0f;
+    public UIManager uiManager;
+
     void Start()
     {
         SpawnPipe();
     }
-    private void Update()
-    {
-        spawnTimer += Time.deltaTime;
-
-        if (spawnTimer >= spawnRate)
-        {
-            SpawnPipe();
-            spawnTimer = 0f;
-=======
-    private float timer = 0f;
-    public UIManager uiManager;
-
+ 
     void Update()
     {
         if (uiManager != null && uiManager.gameStarted)
@@ -37,7 +28,6 @@ public class PipeSpawner : MonoBehaviour
                 SpawnPipe();
                 timer = 0f;
             }
->>>>>>> UI2
         }
     }
 

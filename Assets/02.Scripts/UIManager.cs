@@ -1,29 +1,17 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-<<<<<<< HEAD
 using UnityEngine.SocialPlatforms.Impl;
-=======
-
-using UnityEngine;
-
->>>>>>> UI2
 
 public class UIManager : MonoBehaviour
 {
     // 현재 점수를 표시할 텍스트
     public TextMeshProUGUI scoreText;
 
-<<<<<<< HEAD
-    private Player player;
-    private ScoreUp scoreUp;
 
-    float timePassed = 0f;                  // 경과 시간 저장
-    bool gameStarted = false;               // 게임 실행 여부
-=======
+
     // 게임 오버 시 최종 점수를 표시할 텍스트
     public TextMeshProUGUI finalScoreText;
->>>>>>> UI2
 
     // 게임 시작 버튼
     public GameObject startButton;
@@ -33,6 +21,9 @@ public class UIManager : MonoBehaviour
 
     // 플레이어 객체 (필요 시 연결)
     public Player player;
+
+    // 스코어 업 객체 
+    private ScoreUp scoreUp;
 
     // 게임 시작 여부 (다른 스크립트에서도 접근 가능하도록 public)
     [HideInInspector] public bool gameStarted = false;
@@ -63,17 +54,12 @@ public class UIManager : MonoBehaviour
         if (gameStarted)
         {
             timePassed += Time.deltaTime;
-<<<<<<< HEAD
             int seconds = Mathf.FloorToInt(timePassed); // 초 단위로 변환
             scoreText.text = "Score : " + scoreUp.score; // 텍스트에 표시
         }
         if(player.isDeath)
         {
             GameOver();
-=======
-            int seconds = Mathf.FloorToInt(timePassed);
-            scoreText.text = "Score : " + seconds.ToString();
->>>>>>> UI2
         }
     }
 

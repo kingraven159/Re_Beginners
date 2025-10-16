@@ -16,13 +16,9 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
-<<<<<<< HEAD
-=======
     // UIManager 참조
     private UIManager uiManager;
 
-
->>>>>>> UI2
     private void Awake()
     {   // 초기화
         rigid = GetComponent<Rigidbody2D>();
