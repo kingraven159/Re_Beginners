@@ -11,6 +11,10 @@ public class PipeSpawner : MonoBehaviour
     private float timer = 0f;
     public UIManager uiManager;
 
+    private void Start()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+    }
     void Update()
     {
         if (uiManager != null && uiManager.gameStarted)

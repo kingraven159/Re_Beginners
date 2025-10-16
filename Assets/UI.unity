@@ -645,7 +645,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1113131168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,6 +914,8 @@ MonoBehaviour:
   finalScoreText: {fileID: 58481873}
   startButton: {fileID: 160246911}
   gameOverPanel: {fileID: 158048719}
+  player: {fileID: 0}
+  gameStarted: 0
 --- !u!1 &1752601509
 GameObject:
   m_ObjectHideFlags: 0

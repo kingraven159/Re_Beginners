@@ -82,4 +82,12 @@ public class Player : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Pipe"))
+        {
+            Death();
+            uiManager.GameOver();
+        }
+    }
 }

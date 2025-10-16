@@ -1,9 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-using UnityEngine;
-
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,6 +19,9 @@ public class UIManager : MonoBehaviour
 
     // 플레이어 객체 (필요 시 연결)
     public Player player;
+
+    // 스코어 업 객체 
+    private ScoreUp scoreUp;
 
     // 게임 시작 여부 (다른 스크립트에서도 접근 가능하도록 public)
     [HideInInspector] public bool gameStarted = false;
@@ -51,8 +52,8 @@ public class UIManager : MonoBehaviour
         if (gameStarted)
         {
             timePassed += Time.deltaTime;
-            int seconds = Mathf.FloorToInt(timePassed);
-            scoreText.text = "Score : " + seconds.ToString();
+            int seconds = Mathf.FloorToInt(timePassed); // 초 단위로 변환
+            scoreText.text = "Score : " + seconds.ToString(); // 텍스트에 표시
         }
     }
 
