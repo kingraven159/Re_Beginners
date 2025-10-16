@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 229863977}
   m_Layer: 6
-  m_Name: Ground & Up DeathLine
+  m_Name: Ground & Up DeadLine
   m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

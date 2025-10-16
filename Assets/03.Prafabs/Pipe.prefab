@@ -386,6 +386,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   score: 0
-  maxSpeed: 30
+  maxSpeed: 50
   addSpeed: 2.5
-  addSpeedDelay: 5

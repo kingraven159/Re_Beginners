@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     // UIManager 참조
     private UIManager uiManager;
 
-
     private void Awake()
     {   // 초기화
         rigid = GetComponent<Rigidbody2D>();
@@ -52,6 +51,8 @@ public class Player : MonoBehaviour
     {   //Space를 누르면 날아 오르도록 애니메이션적용
         if (Input.GetKey(KeyCode.Space))
         {
+            //오디오 실행
+            GetComponent<AudioSource>().Play();
 
             anima.SetBool(wingHash, true);
             rigid.velocity = Vector2.up * wingForce;
