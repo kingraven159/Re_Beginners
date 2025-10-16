@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
-
     private void Awake()
     {   // √ ±‚»≠
         rigid = GetComponent<Rigidbody2D>();
@@ -63,5 +62,12 @@ public class Player : MonoBehaviour
     public void Death()
     {
         gameObject.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Pipe"))
+        {
+            Death();
+        }
     }
 }
