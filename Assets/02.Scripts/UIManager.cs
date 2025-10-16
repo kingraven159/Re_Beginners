@@ -1,6 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class UIManager : MonoBehaviour
 {
@@ -35,7 +36,11 @@ public class UIManager : MonoBehaviour
         {
             timePassed += Time.deltaTime;
             int seconds = Mathf.FloorToInt(timePassed); // 초 단위로 변환
-            scoreText.text = "Score : " + seconds.ToString(); // 텍스트에 표시
+            scoreText.text = "Score : " + scoreUp.score; // 텍스트에 표시
+        }
+        if(player.isDeath)
+        {
+            GameOver();
         }
     }
 

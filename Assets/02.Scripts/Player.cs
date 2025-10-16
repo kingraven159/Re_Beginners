@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float maxTilt = 30f;    //최대 회전각
     private float tiltSpeed = 5.0f; // 회전 속도
 
-
+    public bool isDeath = false;
     //에니메이션 전역변수
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
+        isDeath = true;
         gameObject.SetActive(false);
     }
     private void OnCollisionEnter2D(Collision2D col)
