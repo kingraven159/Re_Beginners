@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     private Animator anima;
     private static readonly int wingHash = Animator.StringToHash("Wing");
 
+<<<<<<< HEAD
     // UIManager 참조 (게임 상태 확인용)
     private UIManager uiManager;
 
@@ -29,6 +30,23 @@ public class Player : MonoBehaviour
         anima = GetComponent<Animator>();    // Animator 컴포넌트 가져오기
         uiManager = FindObjectOfType<UIManager>(); // UIManager 자동 연결
         rigid.gravityScale = 0f; // 게임 시작 전엔 중력 꺼두기
+=======
+    private AudioSource wingsound;
+
+    // UIManager 참조
+    private UIManager uiManager;
+
+    private void Awake()
+    {   // 초기화
+        rigid = GetComponent<Rigidbody2D>();
+        anima = GetComponent<Animator>();
+        // UIManager 자동 연결
+        uiManager = FindObjectOfType<UIManager>();
+        // 게임 시작 전에는 중력 꺼두기
+        rigid.gravityScale = 0f;
+        wingsound = GetComponent<AudioSource>();
+
+>>>>>>> origin/fix/sound
     }
 
     // 게임 재시작 시 플레이어 상태 초기화
@@ -66,12 +84,24 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+<<<<<<< HEAD
             anima.SetBool(wingHash, true); // 날갯짓 애니메이션 시작
             rigid.velocity = Vector2.up * wingForce; // 위로 힘 적용
+=======
+            anima.SetBool(wingHash, true);
+            rigid.velocity = Vector2.up * wingForce;
+
+            
+>>>>>>> origin/fix/sound
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             anima.SetBool(wingHash, false); // 날갯짓 애니메이션 종료
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //오디오 실행
+            wingsound.Play();
         }
     }
 

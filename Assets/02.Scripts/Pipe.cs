@@ -11,18 +11,17 @@ public class Pipe : MonoBehaviour
 
     [SerializeField] private float maxSpeed = 30f;
     [SerializeField] private float addSpeed = 2.5f;
-    [SerializeField] private float addSpeedDelay = 30f;
     void Update()
     {
         if (FindObjectOfType<UIManager>().gameStarted)
         {
-            PipeMove();
-
             //맥스 스피드가 아니면 계속 추가
-            if (speed <= maxSpeed)
+            if(speed <= maxSpeed)
             {
                 StartCoroutine(AddSpeed());
             }
+
+            PipeMove();
         }
 
         //화면 밖으로 이동하면
@@ -37,8 +36,7 @@ public class Pipe : MonoBehaviour
     }
     private IEnumerator AddSpeed()
     {
-        yield return new WaitForSeconds(addSpeedDelay);
+        yield return new WaitForSeconds(10f);
         speed += addSpeed;
-        Debug.Log(speed);
     }
 }
