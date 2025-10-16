@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigid;
     [SerializeField] private float wingForce = 1.0f;
     private float maxTilt = 30f;    //최대 회전각
-    private float tiltSpeed = 5.0f; // 회전 속도
+    [SerializeField] private float tiltSpeed = 5.0f; // 회전 속도
 
 
     //에니메이션 전역변수

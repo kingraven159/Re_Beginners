@@ -6,39 +6,39 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Pipe : MonoBehaviour
 {
-    public float speed = 2f;           // 파이프 이동 속도
+    public float speed = 5f;           // 파이프 이동 속도
     public int score = 0;              // 스코어카운터
 
-
-    private float troughDelay = 2.0f;
+    [SerializeField] private float maxSpeed = 30f;
+    [SerializeField] private float addSpeed = 2.5f;
+    [SerializeField] private float addSpeedDelay = 30f;
     void Update()
     {
         if (FindObjectOfType<UIManager>().gameStarted)
         {
-            transform.position += Vector3.left * speed * Time.deltaTime;
-            StartCoroutine(CharacterCheck());
-        }
+            PipeMove();
 
+            //맥스 스피드가 아니면 계속 추가
+            if (speed <= maxSpeed)
+            {
+                StartCoroutine(AddSpeed());
+            }
+        }
 
         //화면 밖으로 이동하면
         if (transform.position.x < -10)
         {
             Destroy(gameObject);       //스스로 삭제
-            StopCoroutine(CharacterCheck()); // 코루틴 정지
         }
     }
-    private IEnumerator CharacterCheck()
+    void PipeMove()
     {
-        Debug.DrawRay(transform.position, transform.up * 10f, Color.red);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.up, 1);
-
-        if (hit.collider.CompareTag("Player"))
-        {
-            Debug.Log(hit.collider.gameObject.name);
-            score++;
-
-            yield return new WaitForSeconds(troughDelay);
-        }
+        transform.position += Vector3.left * speed * Time.deltaTime;
+    }
+    private IEnumerator AddSpeed()
+    {
+        yield return new WaitForSeconds(addSpeedDelay);
+        speed += addSpeed;
+        Debug.Log(speed);
     }
 }
