@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
     {
         gameStarted = false;              // 게임 상태 종료
         gameOverPanel.SetActive(true);    // 게임 오버 UI 보이기
-        finalScoreText.text = "Time: " + scoreText.text; // 최종 점수 표시
+        finalScoreText.text = "Time " + scoreText.text; // 최종 점수 표시
     }
 
     // R 키로 게임 재시작
