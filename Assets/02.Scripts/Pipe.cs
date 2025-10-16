@@ -14,13 +14,14 @@ public class Pipe : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * speed * Time.deltaTime;
+        StartCoroutine(CharacterCheck());
 
         //화면 밖으로 이동하면
         if (transform.position.x < -10)
         {
             Destroy(gameObject);       //스스로 삭제
+            StopCoroutine(CharacterCheck()); // 코루틴 정지
         }
-        StartCoroutine(CharacterCheck());
     }
     private IEnumerator CharacterCheck()
     {
