@@ -7,11 +7,17 @@ public class Pipe : MonoBehaviour
 {
     public float moveSpeed;           // 파이프 이동 속도
     public int score = 0;              // 스코어카운터
-    private PipeSpeed pipeSpeed;
+    [SerializeField] private PipeSpeed pipeSpeed;
+    private UIManager uiManager;
 
+    private void Awake()
+    {
+        uiManager = FindObjectOfType<UIManager>();
+        pipeSpeed = FindObjectOfType<PipeSpeed>();
+    }
     void Update()
     {
-        if (FindObjectOfType<UIManager>().gameStarted)
+        if (uiManager != null && uiManager.gameStarted)
         {
             PipeMove();
         }
@@ -24,9 +30,10 @@ public class Pipe : MonoBehaviour
     }
     void PipeMove()
     {
-        moveSpeed += pipeSpeed.speed;
+        float speed = pipeSpeed.speed;
+        moveSpeed = speed;
         Debug.Log("moveSpeed" + moveSpeed);
-        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        transform.position += Vector3.left * speed * Time.deltaTime;
     }
 
 }

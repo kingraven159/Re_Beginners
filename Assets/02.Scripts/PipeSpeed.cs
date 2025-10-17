@@ -5,7 +5,7 @@ using UnityEngine;
 public class PipeSpeed : MonoBehaviour
 {
 
-    public float speed {get; set;}
+    public float speed { get; set; } = 3f;
 
     private bool isAddSpeed = false;
 
@@ -16,8 +16,11 @@ public class PipeSpeed : MonoBehaviour
 
     private void Awake()
     {
-        uiManager = GetComponent<UIManager>();
+        if (uiManager == null)
+            uiManager = FindObjectOfType<UIManager>();
     }
+
+    
     void Update()
     {
         if (uiManager != null && uiManager.gameStarted)
@@ -26,7 +29,7 @@ public class PipeSpeed : MonoBehaviour
             if (speed <= maxSpeed && !isAddSpeed)
             {
                 StartCoroutine(AddSpeed());
-                Debug.Log(speed);
+               
             }
         }
     }
@@ -36,7 +39,7 @@ public class PipeSpeed : MonoBehaviour
         isAddSpeed = true;
         Debug.Log("È£ÃâµÊ");
         yield return new WaitForSeconds(1f);
-        speed += addSpeed;
+        speed = Mathf.Min(speed + addSpeed, maxSpeed);
         isAddSpeed = false;
     }
 }
