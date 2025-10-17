@@ -61,6 +61,8 @@ public class UIManager : MonoBehaviour
         timePassed = 0f;                  // 시간 초기화
         gameStarted = true;               // 게임 시작 상태로 변경
         scoreText.text = "Time Score : 0";     // 점수 텍스트 초기화
+        scoreText.gameObject.SetActive(true); // 점수 텍스트 보이기
+
     }
 
     // 게임 오버 시 호출되는 함수
@@ -69,6 +71,8 @@ public class UIManager : MonoBehaviour
         gameStarted = false;              // 게임 상태 종료
         gameOverPanel.SetActive(true);    // 게임 오버 UI 보이기
         finalScoreText.text = scoreText.text; // 최종 점수 표시
+        scoreText.gameObject.SetActive(false); // 점수 텍스트 숨기기
+
     }
 
     // R 키로 게임 재시작
@@ -96,6 +100,8 @@ public class UIManager : MonoBehaviour
         {
             player.Reset();
         }
+
+
 
         // 게임 상태 초기화 및 시작
         StartGame();

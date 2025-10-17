@@ -24,6 +24,8 @@ public class Player : MonoBehaviour
     // 중력 적용 여부 플래그
     private bool gravityEnabled = false;
 
+
+
     // 초기 설정
     private void Awake()
     {
