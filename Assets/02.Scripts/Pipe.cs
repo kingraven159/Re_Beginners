@@ -2,25 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Pipe : MonoBehaviour
 {
-    public float speed = 5f;           // 파이프 이동 속도
+    public float moveSpeed;           // 파이프 이동 속도
     public int score = 0;              // 스코어카운터
+    private PipeSpeed pipeSpeed;
 
-    [SerializeField] private float maxSpeed = 30f;
-    [SerializeField] private float addSpeed = 2.5f;
     void Update()
     {
         if (FindObjectOfType<UIManager>().gameStarted)
         {
-            //맥스 스피드가 아니면 계속 추가
-            if(speed <= maxSpeed)
-            {
-                StartCoroutine(AddSpeed());
-            }
-
             PipeMove();
         }
 
@@ -32,11 +24,9 @@ public class Pipe : MonoBehaviour
     }
     void PipeMove()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        moveSpeed += pipeSpeed.speed;
+        Debug.Log("moveSpeed" + moveSpeed);
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
     }
-    private IEnumerator AddSpeed()
-    {
-        yield return new WaitForSeconds(10f);
-        speed += addSpeed;
-    }
+
 }
